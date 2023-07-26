@@ -1,7 +1,7 @@
 FROM ubuntu as builder
 RUN apt update -y && apt install openjdk-8-jdk -y
 RUN apt install maven -y 
-COPY ./student-ui /mnt/
+COPY ./* /mnt/
 WORKDIR /mnt
 RUN mvn clean package
 
