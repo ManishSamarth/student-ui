@@ -85,11 +85,11 @@ resource "aws_instance" "iam-instance-profile-test" {
   sudo unzip apache-tomcat-8.5.91.zip
   sudo mv apache-tomcat-8.5.91 /mnt/tomcat
   KEY=`aws s3 ls $BUCKET --recursive | sort | tail -n 1 | awk '{print $4}'`
-  aws s3 cp s3://$BUCKET/$KEY /mnt/tomcat/webapps/student.war
+  aws s3 cp s3://$BUCKET/$KEY /mnt/tomcat/webapps/
   sudo chown -R ec2-user: /mnt/tomcat
   cd /mnt/tomcat/bin
   sudo chmod 755 *
-  sudo ./catalina.sh start 
+  sudo ./catalina.sh start  
 EOF
 
   tags = {
