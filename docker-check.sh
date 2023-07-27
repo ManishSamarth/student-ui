@@ -10,7 +10,7 @@ check_docker_installed() {
 }
 
 # Function to install Docker on CentOS/RHEL
-install_docker_centos() {
+install_docker() {
     echo "Installing Docker..."
     sudo yum update -y
     sudo yum install -y docker
@@ -23,5 +23,5 @@ if check_docker_installed; then
     echo "Docker is already installed."
 else
     echo "Docker is not installed. Installing it..."
-    install_docker_centos
+    install_docker
 fi
