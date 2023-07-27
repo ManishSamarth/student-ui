@@ -1,3 +1,4 @@
+ARG BUILD_NUMBER
 FROM ubuntu as builder
 RUN apt update -y && apt install openjdk-8-jdk -y
 RUN apt install maven -y 
